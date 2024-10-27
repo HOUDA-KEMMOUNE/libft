@@ -17,6 +17,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+
 int     ft_isalpha(int c);
 int     ft_toupper(int c);
 int     ft_isdigit(int c);
@@ -33,5 +34,6 @@ char    *ft_strchr(const char *s, int c);
 char    *ft_strrchr(const char *s, int c);
 char    *ft_strnstr(const char *haystack, const char *needle, size_t len);
 void    *ft_memset(void *b, int c, size_t len);
+void    ft_bzero(void *s, size_t n);
 
 #endif
