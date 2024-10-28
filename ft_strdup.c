@@ -15,7 +15,31 @@
 char *ft_strdup(const char *s1)
 {
     size_t len = ft_strlen(s1);
+    size_t i;
     char *ptr;
 
-    ptr = malloc(len + 1);
+    ptr = (char *)malloc(len + 1);
+
+    i = 0;
+    while (s1[i])
+    {
+        ptr[i] = s1[i];
+        i++;
+    }
+
+    return (ptr);
 }
+/*
+int main()
+{
+    const char *str = "\0";
+    char *r = ft_strdup(str);
+    char *r2 = strdup(str);
+
+    printf("The result is: %s\n", r);
+    printf("The result is: %s\n", r2);
+
+    free(r);
+    free(r2);
+}
+*/
