@@ -27,7 +27,7 @@ void *ft_calloc(size_t count, size_t size)
     }
     return (ptr);
 }
-
+/*
 int main()
 {
     size_t count = 5;
@@ -44,3 +44,4 @@ int main()
     }
     printf("\n");
 }
+*/
