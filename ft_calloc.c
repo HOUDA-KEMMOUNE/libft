@@ -27,7 +27,7 @@ void *ft_calloc(size_t count, size_t size)
     }
     return (ptr);
 }
-/*
+
 int main()
 {
     size_t count = 5;
@@ -35,7 +35,7 @@ int main()
     size_t i = 0;
     int *ptr;
 
-    ptr = (int *)calloc(count, size);
+    ptr = (int *)ft_calloc(count, size);
 
     while (i < count)
     {
@@ -44,4 +44,3 @@ int main()
     }
     printf("\n");
 }
-*/
