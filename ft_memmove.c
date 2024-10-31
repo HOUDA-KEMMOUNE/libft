@@ -17,8 +17,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
     char *dst_ptr;
     char *src_ptr;
     size_t i;
-
-
+    
     if (!src && !dst)
     {
         return (NULL);
@@ -50,10 +49,10 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 int main()
 {
     char src[] = "Hello world!";
-    char dst[50];
-    size_t n = ft_strlen(src);
+    char *dst = &src[5];
+    size_t length = 5;
 
-    ft_memmove(dst, src, n + 1);
+    ft_memmove(dst, src, length);
     printf("%s\n", dst);
 }
 */
