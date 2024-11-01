@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <fcntl.h>
 void ft_putstr_fd(char *s, int fd)
 {
     size_t i;
@@ -27,7 +27,7 @@ void ft_putstr_fd(char *s, int fd)
 int main()
 {
     char *s = "gdshjdsfgsdfg";
-    int fd = 1;
+    int fd = open("test.txt", O_RDWR);
     ft_putstr_fd(s, fd);
     printf("\n");
 }
