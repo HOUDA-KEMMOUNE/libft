@@ -18,6 +18,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+/*The libc functions' beginning*/
+
 int     ft_isalpha(int c);
 int     ft_toupper(int c);
 int     ft_isdigit(int c);
@@ -41,5 +43,11 @@ void    *ft_memcpy(void *dst, const void *src, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t len);
 void    *ft_memchr(const void *s, int c, size_t n);
 int     ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/*The end of the libc functions*/
+
+/*The Additional functions' beginning*/
+
+char    *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
