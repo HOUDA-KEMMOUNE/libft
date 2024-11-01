@@ -6,16 +6,16 @@ SRC = *.c
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc $(CFLAGS) $^ -o $@
+	@gcc $(CFLAGS) $(OBJ) -o $(NAME)
 
 $(OBJ): $(SRC)
-	gcc -c $(CFLAGS)
+	@gcc -c $(CFLAGS) $(SRC)
 
 .PHONY: clean
 clean:
-	rm $(OBJ)
+	@rm -rf $(OBJ)
 
 fclean: clean
-	rm $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
