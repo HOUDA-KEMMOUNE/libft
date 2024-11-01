@@ -49,7 +49,7 @@ char    *ft_strjoin(char const *s1, char const *s2)
 
     return (ptr);
 }
-
+/*
 int main()
 {
     char const *s1 = "hello ";
@@ -59,3 +59,4 @@ int main()
     printf("%s\n", r);
     free (r);
 }
+*/
