@@ -14,18 +14,26 @@
 
 void    f(unsigned int i, char *c)
 {
-    if (i % 2 == 0 && (c >= 97 && c <= 122))
+    while (c[i])
     {
-        return (c - 32);
+        if (i % 2 == 0 && (c[i] >= 97 && c[i] <= 122))
+        {
+            c[i] = c[i] - 32;
+        }
+        else if (i % 2 == 1 && (c >= 65 && c <= 90))
+        {
+            c[i] = c[i] + 32;
+        }
+        i++;
     }
-    else if (i % 2 == 1 && (c >= 65 && c <= 90))
-    {
-        return (c + 32);
-    }
-    return (c);
 }
 
 void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
+    unsigned int i;
+    size_t len;
+    char *ptr;
 
+    i = 0;
+    len = ft_strlen(s);
 }
