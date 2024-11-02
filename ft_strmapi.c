@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char f(unsigned int i, char c)
+static  char    f(unsigned int i, char c)
 {
     if (i % 2 == 0 && (c >= 97 && c <= 122))
     {
