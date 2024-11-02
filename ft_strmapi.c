@@ -47,6 +47,8 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
         ptr[i] = f(i, ptr_s[i]);
         i++;
     }
+    ptr[i] = '\0';
+    
     return (ptr);
 }
 /*
