@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <unistd.h>
+#include <limits.h>
 
 /*The libc functions' beginning*/
 
