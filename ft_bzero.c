@@ -6,27 +6,26 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 17:17:20 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/10/26 17:17:36 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/03 10:06:24 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char *ptr;
-    size_t i;
+	unsigned char	*ptr;
+	size_t			i;
 
-    ptr = (unsigned char *)s;
-    i = 0;
-    while (i < n)
-    {
-        *ptr = 0;
-        ptr++;
-        i++;
-    }
+	ptr = (unsigned char *)s;
+	i = 0;
+	while (i < n)
+	{
+		*ptr = 0;
+		ptr++;
+		i++;
+	}
 }
-
 /*
 int main()
 {
