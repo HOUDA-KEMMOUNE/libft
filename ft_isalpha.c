@@ -6,13 +6,13 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:08:41 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/10/22 16:09:28 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/03 10:17:29 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
@@ -29,4 +29,3 @@ int	main()
 	printf ("%d\n", r);
 }
 */
-
