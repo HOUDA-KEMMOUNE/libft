@@ -6,19 +6,19 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 18:18:45 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/10/22 18:18:49 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/03 10:25:37 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= 32 && c <= 127)
-    {
-        return (1);
-    }
-    return (0);
+	if (c >= 32 && c <= 127)
+	{
+		return (1);
+	}
+	return (0);
 }
 /*
 int main()
