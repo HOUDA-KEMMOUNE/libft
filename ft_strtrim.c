@@ -6,67 +6,50 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:14:11 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/02 14:14:14 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/03 12:02:37 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static  int set_fun(char c, char *set)
+static int	set_fun(char c, char const *set)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (set[i])
-    {
-        if (c == set[i])
-        {
-            return (1);
-        }
-        i++;
-    }
-    return (0);
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    char *ptr_s1;
-    char *ptr_set;
-    char *ptr;
-    size_t start;
-    size_t end;
-    size_t i;
-    size_t len;
+	char	*ptr_s1;
+	char	*ptr;
+	size_t	start;
+	size_t	end;
+	size_t	i;
 
-    ptr_s1 = (char *)s1;
-    ptr_set = (char *)set;
-    start = 0;
-    end = ft_strlen(ptr_s1);
-
-    while (ptr_s1[start] && set_fun(ptr_s1[start], ptr_set) == 1)
-    {
-        start++;
-    }
-    while (end > start && set_fun(ptr_s1[end - 1], ptr_set) == 1)
-    {
-        end--;
-    }
-
-    len = end - start;
-    printf("The len: %ld\n", len);
-    printf("The start: %ld\n", start);
-    printf("The end: %ld\n", end);
-    ptr = malloc((len + 1)*sizeof(char));
-    
-    i = 0;
-    while (ptr_s1[start] && i < len)
-    {
-        ptr[i] = ptr_s1[start + i];
-        i++;
-    }
-    ptr[i] = '\0';
-
-    return (ptr);
+	ptr_s1 = (char *)s1;
+	start = 0;
+	end = ft_strlen(ptr_s1);
+	while (ptr_s1[start] && set_fun(ptr_s1[start], set) == 1)
+		start++;
+	while (end > start && set_fun(ptr_s1[end - 1], set) == 1)
+		end--;
+	ptr = malloc((end - start + 1) * sizeof(char));
+	i = 0;
+	while (ptr_s1[start] && i < end - start)
+	{
+		ptr[i] = ptr_s1[start + i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }
 /*
 int main()
