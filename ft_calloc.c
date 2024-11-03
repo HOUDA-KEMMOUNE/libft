@@ -6,26 +6,25 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 08:31:41 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/10/28 08:31:44 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/03 10:10:10 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-    unsigned char *ptr;
-    size_t i;
+	unsigned char	*ptr;
+	size_t			i;
 
-    ptr = malloc(count * size);
-
-    i = 0;
-    while (i < count)
-    {
-        *(ptr + i) = 0;
-        i++;
-    }
-    return (ptr);
+	ptr = malloc(count * size);
+	i = 0;
+	while (i < count)
+	{
+		*(ptr + i) = 0;
+		i++;
+	}
+	return (ptr);
 }
 /*
 int main()
