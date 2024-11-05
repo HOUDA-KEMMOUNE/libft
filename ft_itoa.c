@@ -6,13 +6,13 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 16:45:23 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/04 17:00:44 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/05 11:31:44 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	mini_putnbr(int n, char *ptr, int i)
+static int	mini_putnbr(int n, char *ptr, int i)
 {
 	if (n > 9)
 	{
@@ -23,27 +23,41 @@ int	mini_putnbr(int n, char *ptr, int i)
 	return (i);
 }
 
-char *ft_itoa(int n)
+static void	mini_int(char *str, char *ptr)
 {
-	int	x;
-	int	count;
 	int	i;
-	char	*ptr;
-	char	*str_INT_MIN;
 
-	x = n;
-	count = 1;
 	i = 0;
-	if (x < 0)
+	while (str[i])
 	{
-		x = -1 * x;
+		ptr[i] = str[i];
+		i++;
+	}
+}
+
+static int	count_fun(int n, int count)
+{
+	if (n < 0)
+	{
+		n = -1 * n;
 		count++;
 	}
-	while (x >= 10)
+	while (n >= 10)
 	{
-		x = x / 10;
+		n = n / 10;
 		count++;
 	}
+	return (count);
+}
+
+char	*ft_itoa(int n)
+{
+	int		count;
+	int		i;
+	char	*ptr;
+
+	i = 0;
+	count = count_fun(n, 1);
 	ptr = malloc((count + 1) * sizeof(char));
 	if (n < 0)
 	{
@@ -56,23 +70,7 @@ char *ft_itoa(int n)
 		i = mini_putnbr(n, ptr, i);
 		ptr[i] = '\0';
 	}
-	str_INT_MIN = "-2147483648";
- 	if (n == INT_MIN)
-	{
-		while(str_INT_MIN[i])
-		{
-			ptr[i] = str_INT_MIN[i];
-			i++;
-		}
-	}
+	if (n == -2147483648)
+		mini_int("-2147483648", ptr);
 	return (ptr);
 }
-/*
-int	main()
-{
-	int n = -1337;
-	char *r = ft_itoa(n);
-	printf("%s\n", r);
-	free (r);
-}
-*/
