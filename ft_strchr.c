@@ -27,15 +27,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-/*
-int main()
-{
-    const char *str = "skibidi fortnite";
-    //int c = 'b';
-    char *r = ft_strchr(str, 'd');
-    char *r2 = strchr(str, 'd');
-
-    printf("%s\n", r);
-    printf("%s\n", r2);
-}
-*/

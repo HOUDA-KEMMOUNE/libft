@@ -28,16 +28,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int main()
-{
-    const char* s1 = "hihi";
-    const char* s2 = "hisi";
-    size_t n = 2;
-    int r = ft_strncmp(s1, s2, n); //My func
-    int r2 = strncmp(s1, s2, n);
-
-    printf("hadi dyali:  %d\n", r);
-    printf("hadi l2aslia:  %d\n", r2);
-}
-*/

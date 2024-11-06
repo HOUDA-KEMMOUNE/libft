@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 
 	i = 0;
 	count = count_fun(n, 1);
-	ptr = malloc((count + 1) * sizeof(char));
+	ptr = (char *)malloc((count + 1) * sizeof(char));
 	if (n < 0)
 	{
 		n = -1 * n;

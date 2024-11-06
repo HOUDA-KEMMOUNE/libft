@@ -18,13 +18,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-/*
-int main()
-{
-    int b = -1 ;
-    int r = ft_toupper(b);
-    int k = toupper(b);
-    printf("%d||%d\n", r, k);
-    return (0);
-}
-*/

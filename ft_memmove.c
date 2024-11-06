@@ -38,14 +38,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-/*
-int main()
-{
-    char src[] = "Hello world!";
-    char *dst = &src[5];
-    size_t length = 5;
-
-    ft_memmove(dst, src, length);
-    printf("%s\n", dst);
-}
-*/

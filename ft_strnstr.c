@@ -34,14 +34,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-/*
-int main()
-{
-    const char *str = "skibidi fortnite";
-    const char *search = "btata";
-    size_t len = 2;
-    
-    char *r = ft_strnstr(str, search, len);
-    printf ("%s\n", r);
-}
-*/

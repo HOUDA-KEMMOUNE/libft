@@ -32,18 +32,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	else
 		return (NULL);
 }
-/*
-int main()
-{
-    char s[] = "salamo3alikom";
-    int c = 'i';
-    size_t n = 5;
-
-    char *r = ft_memchr(s, c, n);
-    if (r) {
-        printf("Return: %s\n", r);
-    } else {
-        printf("Character '%c' not found in the first %zu bytes.\n", c, n);
-    }
-}
-*/

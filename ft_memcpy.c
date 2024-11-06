@@ -28,20 +28,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (ptr_dst);
 }
-/*
-int main()
-{
-    int src[5] = {1, 2, 3, 4, 5};
-    int dst[5];
-    size_t j = 0;
-    size_t n = sizeof(src);
-
-    ft_memcpy(dst, src, n);
-
-    while (j < 5)
-    {
-        printf("dest[%ld] = %d\n", j, dst[j]);
-        j++;
-    }
-}
-*/

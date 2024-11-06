@@ -39,14 +39,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-/*
-int main()
-{
-    const char *str = "       +12345av34";
-    int r = ft_atoi(str);
-    int r2 = atoi(str);
-
-    printf("%d\n", r);
-    printf("%d\n", r2);
-}
-*/

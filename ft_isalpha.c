@@ -20,12 +20,3 @@ int	ft_isalpha(int c)
 	}
 	return (0);
 }
-/*
-int	main()
-{
-	int n = 64;
-	int r = ft_isalpha(n);
-
-	printf ("%d\n", r);
-}
-*/

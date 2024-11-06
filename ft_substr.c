@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s_len = ft_strlen(s);
 	str = (char *)s;
-	ptr = malloc(len + 1);
+	ptr = (char *)malloc(len + 1);
 	if (!ptr)
 		return (NULL);
 	if (start > s_len)
@@ -35,16 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*
-int main()
-{
-    char const *s = "Bonjour comment ca va?";
-    unsigned int start = 5;
-    size_t len = 8;
-    char *r = ft_substr(s, start, len);
-
-    printf("%s\n", r);
-
-    free(r);
-}
-*/

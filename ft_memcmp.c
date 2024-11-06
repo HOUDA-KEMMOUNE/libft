@@ -29,16 +29,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-int main()
-{
-    int data1[] = {1, 2, 3, 4, 5, 56};
-    int data2[] = {1, 2, 3, 4, 5, 6};
-    size_t n = 4 * sizeof(int);
-    int r = ft_memcmp(data1, data2, n);
-    int r2 = memcmp(data1, data2, n);
-
-    printf("%d\n", r);
-    printf("%d\n", r2);
-}
-*/

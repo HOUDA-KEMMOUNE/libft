@@ -31,14 +31,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dest_len + src_len] = '\0';
 	return (dest_len + src_len);
 }
-/*
-int main()
-{
-    char dst[10] = "skibidi";
-    const char *src = "fortnite";
-    //unsigned int dstsize = sizeof(dst);
-
-    size_t r = ft_strlcat(dst, src, 1);
-    printf("The dst is: %s\tthe size of it is: %zu\n", dst, r);
-}
-*/

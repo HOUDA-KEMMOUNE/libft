@@ -27,14 +27,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	src_len = ft_strlen(src);
 	return (src_len);
 }
-/*
-int main() 
-{
-  const char *src = "skibidibidi";
-  char dest[1];
-  size_t dstsize = sizeof(dest);
-  size_t r = ft_strlcpy(dest, src, dstsize);
-
-  printf("dest is: %s\tlength of src: %zu\n", dest, r);
-}
-*/

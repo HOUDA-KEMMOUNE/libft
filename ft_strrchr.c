@@ -38,15 +38,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[e]);
 	return (NULL);
 }
-/*
-int main()
-{
-    const char *str = "skibidi fortnite";
-    char *r = ft_strrchr(str, '\0');
-    char *r2 = strrchr(str, '\0');
-
-    printf("%s\n", r);
-    printf("%s\n", r2);
-
-}
-*/

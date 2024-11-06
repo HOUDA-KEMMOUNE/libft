@@ -24,12 +24,3 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
-/*
-int main()
-{
-    char *s = "gdshjdsfgsdfg";
-    int fd = open("test.txt", O_RDWR);
-    ft_putstr_fd(s, fd);
-    printf("\n");
-}
-*/

@@ -28,17 +28,3 @@ char	*ft_strdup(const char *s1)
 	}
 	return (ptr);
 }
-/*
-int main()
-{
-    const char *str = "\0";
-    char *r = ft_strdup(str);
-    char *r2 = strdup(str);
-
-    printf("The result is: %s\n", r);
-    printf("The result is: %s\n", r2);
-
-    free(r);
-    free(r2);
-}
-*/

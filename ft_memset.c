@@ -27,24 +27,3 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-/*
-int main()
-{
-    char buffer[10];
-    size_t i;
-    size_t len;
-    int c;
-
-    c = 5;
-    len = sizeof(buffer);
-    ft_memset(buffer, c, len);
-
-    i = 0;
-    while (i < len)
-    {
-        printf("%d ", buffer[i]);
-        i++;
-    }
-    printf("\n");
-}
-*/

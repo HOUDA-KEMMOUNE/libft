@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	ptr_s1 = (char *)s1;
 	ptr_s2 = (char *)s2;
-	ptr = malloc(ft_strlen(ptr_s1) + ft_strlen(ptr_s2) + 1);
+	ptr = (char *)malloc(ft_strlen(ptr_s1) + ft_strlen(ptr_s2) + 1);
 	if (!ptr)
 		return (NULL);
 	i = 0;
@@ -40,14 +40,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[i + j] = '\0';
 	return (ptr);
 }
-/*
-int main()
-{
-    char const *s1 = "hello ";
-    char const *s2 = "world !";
-    char *r = ft_strjoin(s1, s2);
-
-    printf("%s\n", r);
-    free (r);
-}
-*/

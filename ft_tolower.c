@@ -18,12 +18,3 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
-/*
-int main()
-{
-    int c = 90;
-    int r = ft_tolower(c);
-
-    printf("%c\n", r);
-}
-*/

@@ -22,12 +22,3 @@ int	ft_isalnum(int c)
 	}
 	return (0);
 }
-/*
-int main()
-{
-    int c = 122;
-    int r = ft_isalnum(c);
-
-    printf("%d\n", r);
-}
-*/

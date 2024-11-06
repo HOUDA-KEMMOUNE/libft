@@ -21,12 +21,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-/*
-int main()
-{
-    const char *str = "houda"; //This is a literal string => constant string
-    size_t r = ft_strlen(str);
-
-    printf("%zu\n", r);
-}
-*/

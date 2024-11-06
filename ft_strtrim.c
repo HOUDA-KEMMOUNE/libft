@@ -41,7 +41,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && set_fun(ptr_s1[end - 1], set) == 1)
 		end--;
-	ptr = malloc((end - start + 1) * sizeof(char));
+	ptr = (char *)malloc((end - start + 1) * sizeof(char));
 	i = 0;
 	while (ptr_s1[start] && i < end - start)
 	{
@@ -51,13 +51,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*
-int main()
-{
-    char const s1[] = "ababaaaMy name is Simonbbaaabba";
-    char const set[] = "ab";
-    char *r = ft_strtrim(s1, set);
-    printf("%s\n", r);
-    free(r);
-}
-*/
