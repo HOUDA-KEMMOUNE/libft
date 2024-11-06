@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-static char	f(unsigned int i, char c)
-{
-	if (i % 2 == 0 && (c >= 97 && c <= 122))
-		return (c - 32);
-	else if (i % 2 == 1 && (c >= 65 && c <= 90))
-		return (c + 32);
-	return (c);
-}
+// static char	f(unsigned int i, char c)
+// {
+// 	if (i % 2 == 0 && (c >= 97 && c <= 122))
+// 		return (c - 32);
+// 	else if (i % 2 == 1 && (c >= 65 && c <= 90))
+// 		return (c + 32);
+// 	return (c);
+// }
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -42,13 +42,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ptr[i] = '\0';
 	return (ptr);
 }
-/*
-int main()
-{
-    const char *s = "769hb";
-    char *r = ft_strmapi(s, f);
-
-    printf("%s\n", r);
-    free(r);
-}
-*/
