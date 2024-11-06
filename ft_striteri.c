@@ -12,30 +12,26 @@
 
 #include "libft.h"
 
-static void	f(unsigned int i, char *c)
-{
-	while (c[i])
-	{
-		if (i % 2 == 0 && (c[i] >= 97 && c[i] <= 122))
-			c[i] = c[i] - 32;
-		else if (i % 2 == 1 && (c[i] >= 65 && c[i] <= 90))
-			c[i] = c[i] + 32;
-		i++;
-	}
-}
+// static void	f(unsigned int i, char *c)
+// {
+// 	while (c[i])
+// 	{
+// 		if (i % 2 == 0 && (c[i] >= 97 && c[i] <= 122))
+// 			c[i] = c[i] - 32;
+// 		else if (i % 2 == 1 && (c[i] >= 65 && c[i] <= 90))
+// 			c[i] = c[i] + 32;
+// 		i++;
+// 	}
+// }
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
 	i = 0;
-	f(i, s);
+	while (s[i])
+	{
+		f(i, s);
+		i++;
+	}
 }
-/*
-int main()
-{
-    char s[] = "houda";
-    ft_striteri(s, f);
-    printf("%s\n", s);
-}
-*/
