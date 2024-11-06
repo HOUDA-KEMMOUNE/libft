@@ -5,6 +5,9 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
+exe: all
+	gcc $(CFLAGS) $(SRC) -o result
+
 $(NAME): $(OBJ)
 	@ar rcs $@ $(OBJ)
 
@@ -15,6 +18,6 @@ clean:
 	@rm -rf $(OBJ)
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) result
 
 re: fclean all
