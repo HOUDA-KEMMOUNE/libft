@@ -1,17 +1,16 @@
 CFLAGS = -Wall -Wextra -Werror
-NAME = result
-OBJ = *.o
+NAME = libft.a
 SRC = *.c
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@gcc $(CFLAGS) $(OBJ) -o $(NAME)
+	@ar rcs $@ $(OBJ)
 
 $(OBJ): $(SRC)
 	@gcc -c $(CFLAGS) $(SRC)
 
-.PHONY: clean
 clean:
 	@rm -rf $(OBJ)
 
