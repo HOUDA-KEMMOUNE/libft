@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:10:31 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/07 12:46:26 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/07 12:57:43 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)&data[i]);
 		i++;
 	}
-	else
-		return (NULL);
+	return (NULL);
 }
