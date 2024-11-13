@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 08:31:41 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/08 17:22:37 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/13 08:51:34 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	ptr = (unsigned char *)malloc(count * size);
 	if (!ptr)
-	{
 		return (NULL);
-	}
 	i = 0;
 	while (i < count * size)
 	{
