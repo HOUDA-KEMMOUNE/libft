@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 20:43:03 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/10 15:23:07 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/13 08:15:08 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_lstsize(t_list *lst)
 {
 	t_list	*ptr;
-	int	count;
+	int		count;
 
 	ptr = lst;
-	count = 0;	
+	count = 0;
 	while (ptr != NULL)
 	{
 		count++;
