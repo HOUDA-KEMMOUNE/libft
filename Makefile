@@ -16,9 +16,6 @@ B_OBJ = $(OBJ:.c=.o)
 
 all: $(NAME)
 
-exe: all
-	@gcc $(CFLAGS) $(SRC) $(B_SRC) -o result
-
 $(NAME): $(OBJ)
 	@ar rcs $@ $(OBJ)
 
@@ -32,6 +29,6 @@ clean:
 	@rm -rf *.o
 
 fclean: clean
-	@rm -rf $(NAME) result
+	@rm -rf $(NAME)
 
 re: fclean all
