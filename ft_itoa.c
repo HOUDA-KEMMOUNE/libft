@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 16:45:23 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/08 17:13:51 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/13 09:02:06 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	*ft_itoa(int n)
 	i = 0;
 	count = count_fun(n);
 	ptr = (char *)malloc((count + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
 	if (n == -2147483648)
 		mini_int("-2147483648", ptr);
 	if (n < 0)
