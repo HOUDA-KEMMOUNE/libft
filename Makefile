@@ -20,7 +20,7 @@ $(NAME): $(OBJ)
 	@ar rcs $@ $(OBJ)
 
 %.o: %.c
-	@gcc -c $(CFLAGS) $< -o $@
+	@cc -c $(CFLAGS) $< -o $@
 
 bonus: $(OBJ) $(B_OBJ)
 	@ar rcs $(NAME) $(OBJ) $(B_OBJ)
