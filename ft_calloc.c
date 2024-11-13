@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 08:31:41 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/13 08:51:34 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/13 12:28:31 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t count, size_t size)
 	unsigned char	*ptr;
 	size_t			i;
 
+	if (count && size && count > SIZE_MAX / size)
+		return (NULL);
 	ptr = (unsigned char *)malloc(count * size);
 	if (!ptr)
 		return (NULL);
