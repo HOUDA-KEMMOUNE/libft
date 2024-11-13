@@ -6,13 +6,13 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 08:45:19 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/12 16:24:54 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/13 14:59:31 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	word_count(const char *s, char c)
+static int	word_count(const char *s, char c)
 {
 	int	i;
 	int	count;
@@ -23,27 +23,26 @@ int	word_count(const char *s, char c)
 		i++;
 	while (s[i])
 	{
-		if (s[i] != c && s[i - 1] == c)
+		if (i > 0 && s[i] != c && s[i - 1] == c)
 			count++;
 		i++;
 	}
-	if (s[i] == '\0')
+	if (s[0] != c)
 		count++;
 	return (count);
 }
 
-void	ft_free(char **res, int j)
+static void	ft_free(char **res, int j)
 {
-	j = 0;
-	while (res[j])
+	while (j >= 0)
 	{
-		free (res);
-		j++;
+		free (res[j]);
+		j--;
 	}
 	free (res);
 }
 
-void	fill(const char *str, char c, char **res)
+static void	fill(const char *str, char c, char **res)
 {
 	int	start;
 	int	i;
@@ -55,12 +54,17 @@ void	fill(const char *str, char c, char **res)
 	{
 		while (str[i] == c)
 			i++;
+		if (str[i] == '\0')
+			break;
 		start = i;
 		while (str[i] != c && str[i])
 			i++;
 		res[j] = malloc(sizeof(char) * (i - start + 1));
 		if (!res[j])
-			ft_free(res, j);
+		{
+			ft_free(res, j - 1);
+			return ;
+		}
 		ft_strlcpy(res[j], str + start, i - start + 1);
 		j++;
 	}
@@ -71,8 +75,10 @@ char	**ft_split(const char *str, char c)
 {
 	char	**res;
 
+	if (!str)
+		return (NULL);
 	res = malloc(sizeof(char *) * (word_count(str, c) + 1));
-	if (!str || !res)
+	if (!res)
 		return (NULL);
 	fill(str, c, res);
 	return (res);
