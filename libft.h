@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 16:31:06 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/12 08:47:17 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:25:18 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <ctype.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdint.h>
 
 /*The libc functions' beginning*/
 

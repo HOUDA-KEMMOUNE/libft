@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 08:45:19 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/13 14:59:31 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/15 10:28:22 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	word_count(const char *s, char c)
 	return (count);
 }
 
-static void	ft_free(char **res, int j)
+static char	**ft_free(char **res, int j)
 {
 	while (j >= 0)
 	{
@@ -40,9 +40,10 @@ static void	ft_free(char **res, int j)
 		j--;
 	}
 	free (res);
+	return (NULL);
 }
 
-static void	fill(const char *str, char c, char **res)
+static char	**fill(const char *str, char c, char **res)
 {
 	int	start;
 	int	i;
@@ -61,14 +62,12 @@ static void	fill(const char *str, char c, char **res)
 			i++;
 		res[j] = malloc(sizeof(char) * (i - start + 1));
 		if (!res[j])
-		{
-			ft_free(res, j - 1);
-			return ;
-		}
+			return (ft_free(res, j - 1));
 		ft_strlcpy(res[j], str + start, i - start + 1);
 		j++;
 	}
 	res[j] = NULL;
+	return (res);
 }
 
 char	**ft_split(const char *str, char c)
@@ -80,6 +79,5 @@ char	**ft_split(const char *str, char c)
 	res = malloc(sizeof(char *) * (word_count(str, c) + 1));
 	if (!res)
 		return (NULL);
-	fill(str, c, res);
-	return (res);
+	return (fill(str, c, res));
 }
