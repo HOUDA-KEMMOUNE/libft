@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 16:45:23 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/13 09:02:06 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/16 00:53:44 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,13 @@ static int	count_fun(int n)
 	return (count);
 }
 
+static char	*n_is_zero(char *ptr)
+{
+	ptr[0] = '0';
+	ptr[1] = '\0';
+	return (ptr);
+}
+
 char	*ft_itoa(int n)
 {
 	int		count;
@@ -65,13 +72,14 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (n == -2147483648)
 		mini_int("-2147483648", ptr);
-	if (n < 0)
+	else if (n == 0)
+		n_is_zero(ptr);
+	else if (n < 0)
 	{
 		n = -1 * n;
-		ptr[i] = '-';
-		i++;
+		ptr[i++] = '-';
 	}
-	if (n >= 0)
+	else if (n > 0)
 	{
 		i = mini_putnbr(n, ptr, i);
 		ptr[i] = '\0';
