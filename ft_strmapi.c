@@ -6,39 +6,30 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:23:24 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/06 18:58:34 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/16 10:04:46 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// static char	f(unsigned int i, char c)
-// {
-// 	if (i % 2 == 0 && (c >= 97 && c <= 122))
-// 		return (c - 32);
-// 	else if (i % 2 == 1 && (c >= 65 && c <= 90))
-// 		return (c + 32);
-// 	return (c);
-// }
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*ptr_s;
 	unsigned int	i;
-	char			*ptr;
+	char			*dst;
 	size_t			len;
 
-	ptr_s = (char *)s;
-	i = 0;
-	len = ft_strlen(ptr_s);
-	ptr = (char *)malloc((len + 1) * sizeof(char));
-	if (!s || !f || !ptr)
+	if (!s || !f)
 		return (NULL);
-	while (ptr_s[i])
+	i = 0;
+	len = ft_strlen(s);
+	dst = (char *)malloc((len + 1) * sizeof(char));
+	if (!dst)
+		return (NULL);
+	while (i < len)
 	{
-		ptr[i] = f(i, ptr_s[i]);
+		dst[i] = *f(i, s[i]);
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	dst[i] = '\0';
+	return (dst);
 }
