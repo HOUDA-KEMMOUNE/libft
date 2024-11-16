@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 09:54:23 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/15 16:47:05 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/16 08:59:01 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (!s)
+		return ;
 	if (fd >= 0)
 	{
 		ft_putstr_fd(s, fd);
