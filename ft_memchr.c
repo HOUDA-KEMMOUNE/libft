@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:10:31 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/07 12:57:43 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/16 08:20:06 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (data[i] == character)
-			return ((void *)&data[i]);
+			return (&data[i]);
 		i++;
 	}
 	return (NULL);
