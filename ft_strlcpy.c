@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 19:09:34 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/06 19:40:05 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/16 09:27:29 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		j++;
 	}
 	dst[j] = '\0';
-	src_len = ft_strlen(src);
 	return (src_len);
 }
