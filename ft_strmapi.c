@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 10:23:24 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/16 10:04:46 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/16 10:30:31 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	while (i < len)
 	{
-		dst[i] = *f(i, s[i]);
+		dst[i] = f(i, s[i]);
 		i++;
 	}
 	dst[i] = '\0';
