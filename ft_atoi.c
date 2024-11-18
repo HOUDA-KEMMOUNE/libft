@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 10:54:17 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/18 18:50:43 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/18 21:16:41 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 static int	check(const char *str, int i)
 {
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '+')
 		i++;
 	return (i);
 }
@@ -31,9 +29,10 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	result = 0;
 	i = check(str, i);
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		sign = -1;
+		if (str[i] == '-')
+			sign = -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
