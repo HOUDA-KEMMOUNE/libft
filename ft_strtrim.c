@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:14:11 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/16 18:25:15 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/19 00:05:15 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!ptr)
 		return (NULL);
 	i = 0;
-	while (ptr_s1[start] && i < end - start)
-	{
-		ptr[i] = ptr_s1[start + i];
-		i++;
-	}
-	ptr[i] = '\0';
+	ft_strlcpy(ptr, &ptr_s1[start + i], end - start + 1);
 	return (ptr);
 }

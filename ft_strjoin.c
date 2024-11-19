@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 14:44:14 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/16 09:09:27 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/18 23:30:26 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
-	int	total_len;
+	int		total_len;
 
 	if (!s1 || !s2)
 		return (NULL);
