@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 08:45:19 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/19 00:05:08 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:10:33 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,15 @@ static int	word_count(const char *s, char c)
 
 static char	**ft_free(char **res, int j)
 {
-	while (j >= 0)
-	{
+	if (j == 0)
 		free (res[j]);
-		j--;
+	else
+	{
+		while (j >= 0)
+		{
+			free (res[j]);
+			j--;
+		}
 	}
 	free (res);
 	return (NULL);
@@ -61,7 +66,9 @@ static char	**fill(const char *str, char c, char **res)
 		while (str[i] != c && str[i])
 			i++;
 		res[j] = malloc(sizeof(char) * (i - start + 1));
-		if (!res[j])
+		if (!res[0])
+			return (ft_free(res, j - 1));
+		else if (!res[j])
 			return (ft_free(res, j - 1));
 		ft_strlcpy(res[j], str + start, i - start + 1);
 		j++;
