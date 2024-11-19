@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 08:45:19 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/19 16:37:32 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/19 19:18:34 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@ static int	word_count(const char *s, char c)
 
 	i = 0;
 	count = 0;
-	if (s[0] != c)
-		count++;
-	while (s[i] == c)
-		i++;
 	while (s[i])
 	{
-		if (i > 0 && s[i] != c && s[i - 1] == c)
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+		{
 			count++;
-		i++;
+			while (s[i] != c && s[i])
+				i++;
+		}
 	}
 	return (count);
 }
@@ -66,9 +67,7 @@ static char	**fill(const char *str, char c, char **res)
 		while (str[i] != c && str[i])
 			i++;
 		res[j] = malloc(sizeof(char) * (i - start + 1));
-		if (!res[0])
-			return (ft_free(res, j - 1));
-		else if (!res[j])
+		if (!res[j])
 			return (ft_free(res, j - 1));
 		ft_strlcpy(res[j], str + start, i - start + 1);
 		j++;
@@ -80,11 +79,18 @@ static char	**fill(const char *str, char c, char **res)
 char	**ft_split(const char *str, char c)
 {
 	char	**res;
+	int		count;
 
 	if (!str)
 		return (NULL);
-	res = malloc(sizeof(char *) * (word_count(str, c) + 1));
+	count = word_count(str, c);
+	res = malloc(sizeof(char *) * (count + 1));
 	if (!res)
 		return (NULL);
+	if (count == 0)
+	{
+		res[0] = NULL;
+		return (res);
+	}
 	return (fill(str, c, res));
 }
