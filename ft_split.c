@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 08:45:19 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/15 10:28:22 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/19 00:05:08 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	word_count(const char *s, char c)
 
 	i = 0;
 	count = 0;
+	if (s[0] != c)
+		count++;
 	while (s[i] == c)
 		i++;
 	while (s[i])
@@ -27,8 +29,6 @@ static int	word_count(const char *s, char c)
 			count++;
 		i++;
 	}
-	if (s[0] != c)
-		count++;
 	return (count);
 }
 
