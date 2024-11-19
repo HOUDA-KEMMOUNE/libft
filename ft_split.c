@@ -6,7 +6,7 @@
 /*   By: hkemmoun <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 08:45:19 by hkemmoun          #+#    #+#             */
-/*   Updated: 2024/11/19 14:10:33 by hkemmoun         ###   ########.fr       */
+/*   Updated: 2024/11/19 16:37:32 by hkemmoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char	**fill(const char *str, char c, char **res)
 		while (str[i] == c)
 			i++;
 		if (str[i] == '\0')
-			break;
+			break ;
 		start = i;
 		while (str[i] != c && str[i])
 			i++;
